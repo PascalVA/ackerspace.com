@@ -22,3 +22,6 @@ menus:
     - name: about
       pageRef: /about/
       weight: 20
+    - name: rss
+      url: /index.xml
+      weight: 30
