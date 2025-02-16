@@ -2,3 +2,23 @@ baseURL: https://ackerspace.com/
 languageCode: en-us
 title: ackerspace.com
 theme: PaperMod
+
+params:
+  ShowCodeCopyButtons: true
+  homeInfoParams:
+    Title: "Welcome to the ackerspace..."
+    Content: >
+      My name is **Pascal Van Acker** and this is my personal space.
+      The blog contains various technical posts and tutorials
+      focused on infrastructure deployments and configurations.
+
+      For more information about myself, you can have a look at the [about](/about/) page.
+
+menus:
+  main:
+    - name: blog
+      pageRef: /
+      weight: 10
+    - name: about
+      pageRef: /about/
+      weight: 20
