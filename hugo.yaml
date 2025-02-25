@@ -1,7 +1,9 @@
 baseURL: https://ackerspace.com/
 languageCode: en-us
 title: ackerspace.com
-theme: PaperMod
+theme:
+ - hugo-notice
+ - PaperMod
 
 params:
   ShowCodeCopyButtons: true
