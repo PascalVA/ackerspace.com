@@ -6,6 +6,7 @@ theme:
  - PaperMod
 
 params:
+  env: production
   ShowCodeCopyButtons: true
   homeInfoParams:
     Title: "Welcome to the ackerspace..."
@@ -15,6 +16,9 @@ params:
       focused on infrastructure deployments and configurations.
 
       For more information about myself, you can have a look at the [about](/about/) page.
+  analytics:
+    google:
+      SiteVerificationTag: "G-BYWTLHMNYD"
 
 menus:
   main:
