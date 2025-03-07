@@ -482,6 +482,11 @@ This will block any inbound or forwarded connections outside of our whitelist (w
 The IP set and firewall rules have been applied but have not yet been made them persistent by using the `iptables-save` command. If you lock yourself out of the machine, simply rebooting it will restore the state to where we started. You can also use the command `iptables -F <CHAIN>` to flush the chain rules and start over. For example:
 
 ```shell
+# change chain the policies back to accept
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
+
+# flush the chains
 sudo iptables -F INPUT
 sudo iptables -F FORWARD
 sudo iptables -F OUTPUT
@@ -516,7 +521,7 @@ After a reboot of the server, you will notice that all of the iptables rules and
 
 
 {{< notice tip >}}
-If you are running a rootful containerd service that is managing iptables rules you can still add an ip whitelist by using the `contidtionsV4` and `conditionsV6` directives as described [here](https://www.cni.dev/plugins/current/meta/portmap/).
+If you are running a rootful containerd service that is managing iptables rules you can still add an ip whitelist by using the `contidtionsV4` and `conditionsV6` directives in your cni configuration files at `/etc/cni/net.d/` as described [here](https://www.cni.dev/plugins/current/meta/portmap/).
 
 For example:
 ```
@@ -553,6 +558,11 @@ sudo ipset destroy SETNAME
 ## What's Next?
 
 I hope you have enjoyed yourself and have learned something from this article. In the future, I plan to write some more articles detailing how to automate this setup with Ansible, how to use nerdctl compose to deploy containers and how to properly manage and monitor these container deployments. I also want to take a look at [bypass4netns](https://github.com/rootless-containers/bypass4netns) to improve the network performance of namespaced networking.
+
+
+## Ariticle Discussion and Comments
+
+I have not integrated a commenting system on the website, instead you can comment on this acrticle in the following [Github Discussion](https://github.com/PascalVA/ackerspace.com/discussions/1).
 
 
 ## Sources
