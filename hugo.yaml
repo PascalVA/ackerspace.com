@@ -6,7 +6,6 @@ theme:
  - PaperMod
 
 params:
-  env: production
   ShowCodeCopyButtons: true
   homeInfoParams:
     Title: "Welcome to the ackerspace..."
